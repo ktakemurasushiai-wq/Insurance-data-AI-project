@@ -23,23 +23,14 @@
 
 ## 2. システム構成（アーキテクチャ）
 
-
+![Dashboard Screenshot](reports/dashboard_screenshot.png)
 
 ```mermaid
 graph LR
     subgraph "Data Generation Layer"
     A[Python: Dummy Data Gen] --> B[Pandas: Preprocessing]
     end
-
-    subgraph "Storage Layer"
-    B --> C[(Processed CSV/DB)]
-    end
-
-    subgraph "Visualization & Insight Layer"
-    C --> D[Power BI: DAX / Modeling]
-    D --> E{Business Dashboard}
-    E --> F[Strategy Planning]
-    end
+    ...
  ```
 
 ## 3. 実装済み/実装予定のKPI（推奨度分析）
@@ -75,8 +66,8 @@ graph LR
 - [x] README.md によるドキュメント整備
 - [x] ダミーデータ生成スクリプトの開発 (`01_dummy_data_generation.ipynb`)
 - [x] PythonによるNPS算出ロジックの実装 (`02_nps_analysis.ipynb`)
-- [ ] Power BIダッシュボードの構築
-- [ ] 支払いプロセス自動化（AI抽出）機能の追加
+- [x] Power BIダッシュボードの構築
+
 
 ## 7. 使用方法
 1. `notebooks/01_dummy_data_generation.ipynb` を実行し、`data/` 内に生データを生成します。
