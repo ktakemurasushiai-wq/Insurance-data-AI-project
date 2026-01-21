@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# APIキーが含まれる環境変数ファイル (最重要：絶対に公開しない)
+.env
+
+# 解析元の生データ (個人情報が含まれる可能性がある想定で除外)
+data/raw_data/
+medical_*.txt
+
+# ログファイル
+*.log
+
+# VS Codeの設定ファイル
+.vscode/
