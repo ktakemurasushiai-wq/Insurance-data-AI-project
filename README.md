@@ -23,7 +23,7 @@
 
 ## 2. システム構成（アーキテクチャ）
 
-![Dashboard Screenshot](reports\summary_report.png)
+![Dashboard Screenshot](r("reports\summary_report.png"))
 
 ```mermaid
 graph LR
