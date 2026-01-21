@@ -23,14 +23,26 @@
 
 ## 2. システム構成（アーキテクチャ）
 
+本プロジェクトは、データの生成から分析、可視化までを一貫して行うデータパイプラインを構築しています。
 
 ```mermaid
 graph LR
-    subgraph "Data Generation Layer"
-    A[Python: Dummy Data Gen] --> B[Pandas: Preprocessing]
+    subgraph "Data Layer (Python)"
+        A[01_Dummy_Data_Gen] -- "生データ生成" --> B[(data/raw_data.csv)]
+        B --> C[02_NPS_Analysis]
+        C -- "KPI集計・加工" --> D[(data/nps_summary.csv)]
     end
-    ...
- ```
+
+    subgraph "Visualization Layer (Power BI)"
+        D --> E[Calendar Table]
+        E --> F{Power BI Dashboard}
+        F --> G[時系列・属性別分析]
+    end
+
+    subgraph "Future Phase (AI)"
+        H[Text Extraction AI] -.-> C
+    end
+```
 
 ## 3. 実装済み/実装予定のKPI（推奨度分析）
 
